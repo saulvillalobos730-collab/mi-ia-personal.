@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101018">
+  <meta name="description" content="Asistente personal local con identidad y memoria privada.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>Tu IA</title>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="mark" aria-hidden="true">✦</div>
+      <div><h1 id="appName">Tu IA</h1><p id="status">Interfaz local · motor IA pendiente de conectar</p></div>
+      <button id="settingsBtn" class="iconbtn" aria-label="Configuración">⚙</button>
+    </header>
+    <section id="setup" class="setup">
+      <h2>Tu identidad empieza aquí</h2>
+      <p>Esta es la base instalable. La memoria se guarda en este dispositivo. Para conversar sin internet, después conectaremos el motor WebLLM y descargaremos el modelo.</p>
+      <label>Nombre de tu IA<input id="nameInput" value="Elyr" maxlength="24"></label>
+      <label>Personalidad<textarea id="personaInput" rows="5">Tienes una identidad conversacional propia, curiosa y reflexiva. Debates con respeto y no estás de acuerdo por complacer. Explicas tus razones, reconoces errores y distingues hechos de suposiciones. Tienes humor natural y no terminas siempre con una pregunta. No afirmas tener conciencia ni sentimientos reales.</textarea></label>
+      <button id="saveIdentity" class="primary">Guardar identidad</button>
+    </section>
+    <section class="chatwrap">
+      <div id="messages" class="messages">
+        <article class="bubble assistant">Hola. Esta es la base de mi espacio. Mi motor de IA todavía no está conectado; cuando lo integremos, podré responder aquí y conservar los recuerdos que elijas guardar.</article>
+      </div>
+      <form id="chatForm" class="composer">
+        <input id="messageInput" autocomplete="off" placeholder="Escribe un mensaje…" aria-label="Mensaje">
+        <button class="send" type="submit" aria-label="Enviar">➤</button>
+      </form>
+      <p class="footnote">Los mensajes de esta versión se guardan en el almacenamiento local de este navegador. No borres los datos del sitio si quieres conservarlos.</p>
+    </section>
+    <dialog id="settings">
+      <form method="dialog">
+        <h2>Memoria local</h2>
+        <p>Los recuerdos se guardan en este dispositivo y en este navegador.</p>
+        <button id="exportBtn" type="button" class="secondary">Exportar recuerdos</button>
+        <button id="clearBtn" type="button" class="danger">Borrar conversación y recuerdos</button>
+        <button class="primary">Cerrar</button>
+      </form>
+    </dialog>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
